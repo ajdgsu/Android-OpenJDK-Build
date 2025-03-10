@@ -13,7 +13,7 @@ else
   if [[ "$TARGET_JDK" == "x86" ]]; then
      export CFLAGS+=" -O3 -mstackrealign"
   else
-     export CFLAGS+=" -O3 -march=armv8.5-a -pipe -fno-plt -funroll-loops -ffast-math -finline-functions -floop-block"
+     export CFLAGS+=" -O3 -march=armv8.5-a -pipe -fno-plt -funroll-loops -ffast-math -finline-functions"
   fi
 fi
 
