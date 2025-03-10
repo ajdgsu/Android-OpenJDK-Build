@@ -13,7 +13,7 @@ else
   if [[ "$TARGET_JDK" == "x86" ]]; then
      export CFLAGS+=" -O3 -mstackrealign"
   else
-     export CFLAGS+=" -O3"
+     export CFLAGS+=" -O3 -march=armv8.5-a -mllvm -regalloc-enable-advisor=release"
   fi
 fi
 
