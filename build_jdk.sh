@@ -11,7 +11,7 @@ then
   export CFLAGS+=" -O3 -D__thumb__"
 else
   if [[ "$TARGET_JDK" == "x86" ]]; then
-     export CFLAGS+=" -O3 -mstackrealign"
+     export CFLAGS+=" -O3 -mstackrealign -funroll-loops -ffast-math -finline-functions -floop-block -ftree-vectorize"
   else
      export CFLAGS+=" -O3 -march=armv8.5-a -pipe -fno-plt"
   fi
@@ -26,7 +26,7 @@ platform_args="--with-toolchain-type=gcc \
 AUTOCONF_x11arg="--x-includes=$ANDROID_INCLUDE/X11"
 
 export CFLAGS+=" -DANDROID"
-export LDFLAGS+=" -L$PWD/dummy_libs"
+export LDFLAGS+=" -L$PWD/dummy_libs -Wl,-z,pack-relative-relocs -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now"
 
 # Create dummy libraries so we won't have to remove them in OpenJDK makefiles
 mkdir -p dummy_libs
