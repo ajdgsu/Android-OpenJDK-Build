@@ -13,7 +13,7 @@ else
   if [[ "$TARGET_JDK" == "x86" ]]; then
      export CFLAGS+=" -O3 -mstackrealign"
   else
-     export CFLAGS+=" -O3 -march=armv8.5-a -mllvm -regalloc-enable-advisor=release -mllvm -polly -mllvm -polly-run-inliner -mllvm -polly-ast-use-context -mllvm -polly-detect-keep-going -mllvm -polly-invariant-load-hoisting -mllvm -polly-vectorizer=stripmine -mllvm -polly-opt-fusion=max -mllvm -hot-cold-split=true -mllvm -polly-run-dce"
+     export CFLAGS+=" -O3 -march=armv8.5-a -mllvm -mllvm -polly -mllvm -polly-run-inliner -mllvm -polly-ast-use-context -mllvm -polly-detect-keep-going -mllvm -polly-invariant-load-hoisting -mllvm -polly-vectorizer=stripmine -mllvm -polly-opt-fusion=max -mllvm -hot-cold-split=true -mllvm -polly-run-dce"
   fi
 fi
 
