@@ -20,5 +20,5 @@ if [[ "$error_code" -ne 0 ]]; then
   exit $error_code
 fi
 
-CFLAGS="-fno-rtti -march=armv8.5-a" CXXFLAGS="-fno-rtti -march=armv8.5-a" make -j4
+CFLAGS="-fno-rtti -march=armv8.5-a -pipe" CXXFLAGS="-fno-rtti -march=armv8.5-a -pipe" make -j4
 make install
